@@ -16,8 +16,12 @@ public class test {
         ListNode b = new ListNode(2,c);
         ListNode a = new ListNode(1,b);
 
-        ListNode result = ReverseList.reverseList(a);
-        System.out.println(result);
+//        ListNode result = ReverseList.reverseList(a);
+//        System.out.println(result);
+
+//        ListNode result = ReverseList.reverseBetween(a,2,4);
+//        System.out.println(ListUtils.out(result));
+
 
     }
 }
