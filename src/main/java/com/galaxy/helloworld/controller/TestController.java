@@ -1,6 +1,5 @@
 package com.galaxy.helloworld.controller;
 
-import com.baijia.xiaozao.core.tool.api.R;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +23,9 @@ public class TestController {
 
     @RequestMapping(value = "/get", method = GET)
     @ResponseBody
-    public R<Boolean> get() {
+    public Boolean get() {
 
         RestTemplate restTemplate = new RestTemplate();
-        return R.data(Boolean.TRUE);
+        return Boolean.TRUE;
     }
 }

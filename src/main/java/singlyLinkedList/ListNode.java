@@ -22,6 +22,6 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "cur " + this.val + "post " + this.next.val;
+        return "cur " + this.val;
     }
 }

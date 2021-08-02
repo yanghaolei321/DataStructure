@@ -1,6 +1,5 @@
 package com.galaxy.helloworld.controller;
 
-import com.baijia.xiaozao.core.tool.api.R;
 import com.galaxy.helloworld.middleware.ProxyService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +23,7 @@ public class StaticProxyController {
     private final ProxyService proxyService;
 
     @PostMapping("/goStatic")
-    public R<Boolean> staticProxy(){
-        return R.data(proxyService.goProxy());
+    public Boolean staticProxy(){
+        return proxyService.goProxy();
     }
 }

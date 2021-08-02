@@ -1,6 +1,5 @@
 package com.galaxy.helloworld.entity.proxy;
 
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Proxy-静态测试代理目标

@@ -24,7 +24,7 @@ public class monkey implements animalAction {
 
     @Override
     public String toString() {
-        return ToStringBuilder.reflectionToString(this);
+        return "";
     }
 
 
