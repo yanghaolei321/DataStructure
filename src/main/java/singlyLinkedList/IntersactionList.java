@@ -38,6 +38,29 @@ public class IntersactionList {
         return headA;
     }
 
+
+    public static ListNode detectCycle(ListNode head) {
+
+        ListNode fast = head.next.next;
+        ListNode slow = head.next;
+        while (fast!=null & slow!=null &fast!=slow){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        if(fast!=null){
+            ListNode backup = head;
+            while(backup!=slow){
+                backup = backup.next;
+                slow = slow.next;
+            }
+            return backup;
+        }
+
+        return null;
+
+    }
+
     private static ListNode forward(ListNode head, int gap){
         for(int i = 0;i<gap;i++){
             head = head.next;
