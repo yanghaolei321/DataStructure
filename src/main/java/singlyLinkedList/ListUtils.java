@@ -24,4 +24,13 @@ public class ListUtils {
         return a;
     }
 
+    public static int getLength(ListNode head){
+        int length = 0;
+        while (head !=null){
+            length ++ ;
+            head = head.next;
+        }
+        return length;
+    }
+
 }

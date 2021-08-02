@@ -1,5 +1,7 @@
 package singlyLinkedList;
 
+import java.util.List;
+
 /**
  * 类的描述
  *
@@ -8,4 +10,33 @@ package singlyLinkedList;
  */
 
 public class IntersactionList {
+
+
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+        int alength = ListUtils.getLength(headA);
+        int blength = ListUtils.getLength(headB);
+
+        if(alength>blength){
+            headA = forward(headA,alength-blength);
+        }else {
+            headB = forward(headB,blength-alength);
+        }
+
+        while (headA!=headB){
+            headA = headA.next;
+            headB = headB.next;
+        }
+
+        return headA;
+    }
+
+    private static ListNode forward(ListNode head, int gap){
+        for(int i = 0;i<gap;i++){
+            head = head.next;
+        }
+        return head;
+
+    }
+
 }
