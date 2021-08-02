@@ -12,6 +12,13 @@ import java.util.List;
 public class IntersactionList {
 
 
+    /**
+     * 160 链表相交
+     *
+     * @param headA
+     * @param headB
+     * @return
+     */
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         int alength = ListUtils.getLength(headA);
