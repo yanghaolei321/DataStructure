@@ -39,6 +39,12 @@ public class IntersactionList {
     }
 
 
+    /**
+     * 142 求环
+     *
+     * @param head
+     * @return
+     */
     public static ListNode detectCycle(ListNode head) {
 
         ListNode fast = head.next.next;
@@ -60,6 +66,78 @@ public class IntersactionList {
         return null;
 
     }
+
+
+    /**
+     * 46 链表分区
+     *
+     * @param head
+     * @param x
+     * @return
+     */
+    public static ListNode partition(ListNode head, int x) {
+
+
+        ListNode phead = new ListNode();
+        ListNode nhead =  new ListNode();
+        ListNode pcur = phead;
+        ListNode ncur = nhead;
+        while (head!=null){
+            if(head.val<x){
+                pcur.next = head;
+                pcur =  pcur.next;
+            }else {
+                ncur.next = head;
+                ncur = ncur.next;
+            }
+            head = head.next;
+        }
+
+        pcur.next = null;
+        ncur.next = phead.next;
+        return nhead.next;
+    }
+
+
+    /**
+     * 21 合并有序列表
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+
+
+        ListNode dummy = new ListNode();
+        ListNode dummyCur = dummy;
+        while(l1!=null&l2!=null){
+            if(l1.val<=l2.val){
+                dummyCur.next = l1;
+                dummyCur = dummyCur.next;
+                l1 = l1.next;
+            } else{
+                dummyCur.next = l2;
+                dummyCur = dummyCur.next;
+                l2 = l2.next;
+            }
+        }
+
+        while(l1!=null){
+            dummyCur.next = l1;
+            dummyCur = dummyCur.next;
+            l1 = l1.next;
+        }
+
+        while(l2!=null){
+            dummyCur.next = l2;
+            dummyCur = dummyCur.next;
+            l2 = l2.next;
+        }
+
+        return dummy.next;
+    }
+
 
     private static ListNode forward(ListNode head, int gap){
         for(int i = 0;i<gap;i++){

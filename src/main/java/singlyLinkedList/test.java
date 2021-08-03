@@ -13,15 +13,15 @@ public class test {
 
 
         ListNode e = new ListNode(5);
-        ListNode d = new ListNode(4,e);
+        ListNode d = new ListNode(2,e);
         ListNode c = new ListNode(3,d);
-        ListNode b = new ListNode(2,c);
+        ListNode b = new ListNode(4,c);
 
         ListNode a = new ListNode(1,b);
 
         ListNode g = new ListNode(6,null);
 
-        e.next = b;
+        //e.next = b;
 
 
 //        ListNode result = ReverseList.reverseList(a);
@@ -33,7 +33,9 @@ public class test {
 //        ListNode result = IntersactionList.getIntersectionNode(a,g);
 //        System.out.println(result);
 
-        ListNode ret = IntersactionList.detectCycle(a);
+//        ListNode ret = IntersactionList.detectCycle(a);
+
+        ListNode ret = IntersactionList.partition(a,3);
         System.out.println(ret);
     }
 }
