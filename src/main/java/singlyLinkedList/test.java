@@ -12,14 +12,17 @@ public class test {
     public static void main(String[] args) {
 
 
-        ListNode e = new ListNode(5);
-        ListNode d = new ListNode(2,e);
-        ListNode c = new ListNode(3,d);
+        ListNode e = new ListNode(8);
+        ListNode d = new ListNode(8,e);
+
+        ListNode c = new ListNode(3);
         ListNode b = new ListNode(4,c);
+        ListNode a = new ListNode(2,b);
 
-        ListNode a = new ListNode(1,b);
 
-        ListNode g = new ListNode(6,null);
+
+
+
 
         //e.next = b;
 
@@ -35,7 +38,10 @@ public class test {
 
 //        ListNode ret = IntersactionList.detectCycle(a);
 
-        ListNode ret = IntersactionList.partition(a,3);
-        System.out.println(ret);
+//        ListNode ret = IntersactionList.partition(a,3);
+//        System.out.println(ret);
+
+
+        System.out.println(ListUtils.out(ReverseList.addTwoNumbers(a,d)));
     }
 }

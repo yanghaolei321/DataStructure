@@ -72,4 +72,76 @@ public class ReverseList {
     }
 
 
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
+        int length1 = getLength(l1);
+        int length2 = getLength(l2);
+        if(length1>length2){
+            increList(l2,length1-length2);
+        }else{
+            increList(l1,length2-length1);
+        }
+
+        ListNode head = new ListNode();
+        ListNode tail = head;
+        ListNode cur1 = l1;
+        ListNode cur2 = l2;
+
+
+        int carry = 0 ;
+
+        while(cur1!=null){
+            int n1 = (l1!=null)?cur1.val:0;
+            int n2 = (l2!=null)?cur2.val:0;
+            tail.next = new ListNode( (n1 + n2 + carry)%10);
+            tail = tail.next;
+
+            if(n1+ n2 >= 10){
+                carry = 1 ;
+            } else {
+                carry = 0;
+            }
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+
+        if(carry!=0){
+            tail.next = new ListNode(0);
+        }
+        return head.next;
+    }
+
+    private static ListNode reverseListNode(ListNode head){
+        ListNode newHead = new ListNode();
+        ListNode post;
+        ListNode cur = head;
+        while (cur!=null){
+           post = cur.next;
+           cur.next = newHead;
+           newHead = newHead.next;
+           cur = cur.next;
+        }
+        return cur;
+    }
+
+    private static int getLength(ListNode head){
+        int length = 0;
+        while(head!=null){
+            head = head.next;
+            length++;
+        }
+        return length;
+    }
+
+    private static void increList(ListNode head,int diff){
+        while(head.next!=null){
+            head = head.next;
+        }
+        for(int i = 0;i<diff;i++){
+            head.next = new ListNode(0);
+            head = head.next;
+        }
+
+    }
+
 }
