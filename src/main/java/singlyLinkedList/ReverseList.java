@@ -72,6 +72,13 @@ public class ReverseList {
     }
 
 
+    /**
+     * 2 两数之和
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         int length1 = getLength(l1);
@@ -123,6 +130,39 @@ public class ReverseList {
         }
         return cur;
     }
+
+
+    /**
+     * 19 删除链表的倒数第N个结点快慢指针
+     *
+     * @param head
+     * @param n
+     * @return
+     */
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+
+        ListNode dummy = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+
+        if(head == null) return head;
+
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+
+        while(fast.next!=null) {
+
+            fast = fast.next;
+            slow = slow.next;
+
+        }
+
+        slow.next = slow.next.next;
+        return dummy.next;
+
+    }
+
 
     private static int getLength(ListNode head){
         int length = 0;

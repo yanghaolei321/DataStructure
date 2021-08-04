@@ -12,12 +12,11 @@ public class test {
     public static void main(String[] args) {
 
 
-        ListNode e = new ListNode(8);
-        ListNode d = new ListNode(8,e);
-
-        ListNode c = new ListNode(3);
-        ListNode b = new ListNode(4,c);
-        ListNode a = new ListNode(2,b);
+        ListNode e = new ListNode(5);
+        ListNode d = new ListNode(4,e);
+        ListNode c = new ListNode(3,d);
+        ListNode b = new ListNode(2,c);
+        ListNode a = new ListNode(1,b);
 
 
 
@@ -42,6 +41,7 @@ public class test {
 //        System.out.println(ret);
 
 
+        ListNode ret =  ReverseList.removeNthFromEnd(a,2);
         System.out.println(ListUtils.out(ReverseList.addTwoNumbers(a,d)));
     }
 }
