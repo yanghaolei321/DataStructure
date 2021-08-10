@@ -16,5 +16,6 @@ public class test {
         int[] nums = new int[]{1,2,3,1};
         System.out.println(dp.rob(nums));
 
+
     }
 }
