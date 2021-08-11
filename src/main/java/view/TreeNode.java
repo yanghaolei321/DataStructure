@@ -1,4 +1,4 @@
-package tree;
+package view;
 
 /**
  * 类的描述

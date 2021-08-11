@@ -1,6 +1,6 @@
 package tree;
 
-import tree.TreeNode;
+import view.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
